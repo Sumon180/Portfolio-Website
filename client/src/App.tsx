@@ -17,6 +17,8 @@ import ContactForm from "./layout/ContactForm";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MailSend from "./layout/MailSend";
 
 const App = () => {
   useEffect(() => {
@@ -25,20 +27,20 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-primary w-full overflow-hidden">
+    <div className="bg-black w-full overflow-hidden">
       <div className={``}>
         <div className={``}>
           <Navbar />
         </div>
       </div>
 
-      <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`bg-black ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Hero />
         </div>
       </div>
 
-      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`bg-black ${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <States />
           <Business />
@@ -47,7 +49,8 @@ const App = () => {
           <Testimonials />
           <Clients />
           <CTA />
-          <ContactForm />
+          <MailSend />
+          {/* <ContactForm /> */}
           <Footer />
         </div>
       </div>

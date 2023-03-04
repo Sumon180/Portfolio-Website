@@ -2,6 +2,9 @@ import { useState } from "react";
 import { RiMessageFill } from "react-icons/ri";
 import { BiDotsHorizontal } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Message = () => {
   const [first, setfirst] = useState(false);
@@ -9,6 +12,11 @@ const Message = () => {
   const message = () => {
     setfirst(!first);
   };
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <>

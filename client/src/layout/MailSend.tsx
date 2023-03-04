@@ -96,7 +96,7 @@ const MailSend = () => {
                 rows={5}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={sendEmail}>
+            <Button className="bg-teal-400 text-black" type="submit" onClick={sendEmail}>
               Send
             </Button>
           </Form>

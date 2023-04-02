@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -6,38 +6,9 @@ import Alert from "react-bootstrap/Alert";
 const MailSend = () => {
   const [show, setShow] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const sendEmail = () => {
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
-
-    const res = await fetch("http://localhost:8004/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
-    });
-
-    const data = await res.json();
-    console.log(data);
-
-    if (data.status === 401 || !data) {
-      console.log("error");
-    } else {
-      setShow(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-      console.log("Contact info sent");
-    }
-  };
+  }
 
   return (
     <>
@@ -67,8 +38,6 @@ const MailSend = () => {
               <Form.Control
                 type="name"
                 name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 placeholder="Enter name"
               />
             </Form.Group>
@@ -77,8 +46,6 @@ const MailSend = () => {
               <Form.Control
                 type="email"
                 name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email"
               />
             </Form.Group>
@@ -91,8 +58,6 @@ const MailSend = () => {
                 as="textarea"
                 type="text"
                 name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 rows={5}
               />
             </Form.Group>

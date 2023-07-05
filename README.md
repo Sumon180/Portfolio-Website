@@ -7,7 +7,7 @@ React.js, Tailwindcss
 
 ## Available Scripts
 
-### `Redux, React, TailwindCss`
+### `React, TailwindCss`
 
 In the project directory, you can run:
 
